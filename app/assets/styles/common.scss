@@ -1,0 +1,151 @@
+@import 'colors';
+
+body {
+    font: 100% Helvetica, sans-serif;
+    background-color: $gray0;
+    margin: 0;
+}
+
+.main_layout {
+    padding-top: 54px;
+    padding-left: 15%;
+    padding-right: 15%;
+    min-height: 100px;
+}
+
+.top_bar {
+    width: 100%;
+    height: 54px;
+    background-color: $bg_search_bar;
+    border-bottom: 1px solid #d9d9d9;
+    position: fixed;
+    z-index: 900;
+
+    input {
+        padding: 5px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        height: 31px;
+        width: 90%;
+        border: 0px;
+        font-size: 18px;
+    }
+    input:focus {
+        outline: none !important;
+        border:0px;    
+    } 
+}
+
+.top_bar_input_container {
+    height: 34px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.logo {
+    width: 5%;
+    height: 50px;
+    margin-top: 3px;
+    background-image: url('/app/assets/images/Logo_ML.png');
+    background-repeat: no-repeat;
+    float: left;
+    padding-right: 1%;
+    
+}
+
+.list_item {
+    display: flex;
+}
+
+.image_container {
+    height: 180px;
+    width: 180px;
+    padding: 16px;
+    border-radius: 4px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+    }
+}
+
+.list_price {
+    font-size: 24px;
+}
+
+.list_item_gral {
+    width: 60%;
+    margin-left: 15px;
+}
+
+.bread_crumb {
+    background-color: $gray0;
+    width: 100%;
+    height: 50px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.detail_container {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;   
+    background-color: white;
+}
+
+.detail_top_container {
+    display: flex;
+    margin-top: 60px;
+    width: 100%
+}
+
+.detail_top_img_container {
+    width: 680px;
+    margin-left: 32px;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.detail_top_info_container {
+    margin-right: 32px;
+    height: 100%;
+    width: 320px;
+}
+
+.detail_buy_button {
+    width: 200px;
+    margin-top: 32px;
+}
+
+.detail_desc_container {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column;
+    margin-left: 32px;
+}
+
+.free_shipping {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background-image: url('/app/assets/images/ic_shipping.png');
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+
+.list_price_container {
+    margin-top: 25px;
+    display: flex;
+}
+
+.list_condition {
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 80px;
+    font-size: 12px;
+}
