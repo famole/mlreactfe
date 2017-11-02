@@ -2,6 +2,7 @@ import React from 'react';
 import { ITEMDESC, getCondition } from '../data/global_constants';
 import classes from '../assets/styles/common.scss';
 import RaisedButton from 'material-ui/RaisedButton';
+import BreadCrumb from './BreadCrumb';
 
 const ItemDetail = ({
     id,
@@ -10,7 +11,8 @@ const ItemDetail = ({
     condition,
     sold_quantity,
     title,
-    description
+    description,
+    breadcrumb
 }) => {
     const condition_str = getCondition(condition) + " - " + sold_quantity + " vendidos";
     const price = "$ " + amount;
@@ -23,6 +25,7 @@ const ItemDetail = ({
     
     return(
         <div className={classes.detail_container}>
+            <BreadCrumb categories={breadcrumb}/>
             <div className={classes.detail_top_container}>
                 <div className={classes.detail_top_img_container}>
                     <img src={image} />
@@ -48,7 +51,8 @@ ItemDetail.propTypes = {
     condition: React.PropTypes.string,
     sold_quantity: React.PropTypes.number,
     title: React.PropTypes.string,
-    description: React.PropTypes.string
+    description: React.PropTypes.string,
+    breadcrumb: React.PropTypes.array
 };
 
 export default ItemDetail;

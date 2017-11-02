@@ -18,7 +18,8 @@ class ItemDetail extends Component {
             picture: '',
             condition: '',
             sold_quantity: null,
-            description: ''
+            description: '',
+            breadcrumb:[]
         }
     }
 
@@ -34,7 +35,10 @@ class ItemDetail extends Component {
     componentWillReceiveProps(newProps) {
 		if (newProps.item) {
             this.setState(newProps.item);
-		}	
+        }
+        if (newProps.breadcrumb) {
+            this.setState({ breadcrumb: newProps.breadcrumb });
+        }	
     }
     
     render() {
@@ -50,6 +54,7 @@ class ItemDetail extends Component {
                     sold_quantity={this.state.sold_quantity}
                     title={this.state.title}
                     description={this.state.description}
+                    breadcrumb={this.state.breadcrumb}
                     />
                 }
             </div>
@@ -59,11 +64,13 @@ class ItemDetail extends Component {
 
 ItemDetail.propTypes = {
     id: React.PropTypes.string,
+    breadcrumb: React.PropTypes.array,
     get_item: React.PropTypes.func
   };
 
 const mapStateToProps = (state) => ({
-  item: state.items_state.current_item
+  item: state.items_state.current_item,
+  breadcrumb: state.items_state.breadcrumb
 });
 
 const mapDispatchToProps = (dispatch) => ({

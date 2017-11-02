@@ -17,7 +17,7 @@ export default function items_reducer(
 			}
 			case GET_ITEM:
 			{
-				return Object.assign({}, state, { current_item: action.data.item });
+				return Object.assign({}, state, { current_item: action.data.item, breadcrumb: action.data.path_from_root });
 			}
 			case FIND_ITEM:
 			{
