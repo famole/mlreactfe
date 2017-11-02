@@ -17,7 +17,7 @@ export function getCondition(type) {
         }
         case USED:
         {
-            return USED;
+            return USADO;
         }
         default:
         {
