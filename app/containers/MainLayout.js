@@ -7,15 +7,6 @@ import AppBar from './AppBar';
 import classes from '../assets/styles/common.scss'
 
 class MainLayout extends Component {
-	constructor(props) {
-		super(props);
-		
-		}
-	
-	handleSearch(){
-
-	}
-
 	render() {
 		MainLayout.propTypes = {
 			children: React.PropTypes.object.isRequired

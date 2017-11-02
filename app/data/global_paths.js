@@ -11,3 +11,7 @@ export function itemDetail(id) {
 export function searchURL(text) {
     return SEARCH_URL_PATH + text;
 }
+
+export function home() {
+    return '/';
+}

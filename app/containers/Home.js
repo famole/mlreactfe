@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
-import { GridList } from 'material-ui/GridList';
-import GridItemList from '../components/GridItemList';
+import GridItems from '../components/GridItems';
 import { fetch_items, find_item } from '../actions/search_actions';
 import { parse_search } from '../utils/utils';
 import { itemDetail } from '../data/global_paths';
@@ -13,6 +12,7 @@ export class Home extends Component {
 	
 		this.state = {
 			items: [],
+			breadcrumb: [],
 			search: undefined
 		};  
 		this.handleItemClick = this.handleItemClick.bind(this);
@@ -31,42 +31,32 @@ export class Home extends Component {
 			this.setState({ search: newProps.search });
 			this.props.fetch_items(newProps.search);
 		}
-		this.setState({ items: newProps.items });
+		this.setState({ items: newProps.items, breadcrumb: newProps.breadcrumb });
 	}
 
 	handleItemClick(id) {
 		this.props.history.push(itemDetail(id));
 	}
 
-	render() {
-		console.log(this.state.items);
+	render() {		
 		return (
-			<div style={{paddingTop: 50, paddingBottom: 50}}>
-				<GridList padding={0} cols={1} cellHeight={221} >
-					{this.state.items.map((item, i) => (
-						<GridItemList
-							key={item.id}
-							id={item.id}
-							price={item.price.amount}
-  							image={item.picture}
-  							title={item.title}
-  							condition={item.condition}
-							free_shipping={item.free_shipping}
-							handleItemClick={this.handleItemClick}
-							/>
-						))}
-				</GridList>
-			</div>
+			<GridItems
+				items={this.state.items}
+				breadcrumb={this.state.breadcrumb}
+				handleItemClick={this.handleItemClick}
+			/>	
 		);
 	}
 }
 
 Home.propTypes = {
-	items: React.PropTypes.array
+	items: React.PropTypes.array,
+	breadcrumb: React.PropTypes.array
 };
 
 const mapStateToProps = (state) => ({
 	items: state.items_state.items,
+	breadcrumb: state.items_state.breadcrumb,
 	search: state.items_state.search
 });
 

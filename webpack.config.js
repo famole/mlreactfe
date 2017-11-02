@@ -60,30 +60,6 @@ module.exports = {
             },
             { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
             { test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/, loader: 'file' }
-            // {
-            //     test: /\.(jpe?g|png|gif|svg)$/i,
-            //     loaders: [
-            //         'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            //         {
-            //             loader: 'image-webpack-loader',
-            //             query: {
-            //               mozjpeg: {
-            //                 progressive: true,
-            //               },
-            //               gifsicle: {
-            //                 interlaced: false,
-            //               },
-            //               optipng: {
-            //                 optimizationLevel: 7,
-            //               },
-            //               pngquant: {
-            //                 quality: '75-90',
-            //                 speed: 3,
-            //               },
-            //             },
-            //         }]
-                
-            // }
         ]
     }
 };

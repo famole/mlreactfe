@@ -52,7 +52,7 @@ body {
     background-repeat: no-repeat;
     float: left;
     padding-right: 1%;
-    
+    cursor: pointer;
 }
 
 .list_item {
@@ -87,6 +87,16 @@ body {
     height: 50px;
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+.bc_text_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $gray2;
+    margin-left: 2px;
+    font-size: 14px;
 }
 
 .detail_container {

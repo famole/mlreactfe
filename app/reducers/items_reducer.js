@@ -5,6 +5,7 @@ export default function items_reducer(
 	state = {
 		categories: [],
 		items: [],
+		breadcrumb: [],
 		search: undefined,
 		current_item: undefined
 	}, action) {
@@ -12,7 +13,7 @@ export default function items_reducer(
 		switch (action.type) {
 			case SEARCH_ITEMS:
 			{
-				return Object.assign({}, state, { categories: action.data.categories, items: action.data.items });
+				return Object.assign({}, state, { categories: action.data.categories, items: action.data.items, breadcrumb: action.data.path_from_root });
 			}
 			case GET_ITEM:
 			{
